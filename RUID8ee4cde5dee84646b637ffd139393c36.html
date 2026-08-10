@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BhaktiAI — Devotional Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="brand"><span class="brand-mark">ॐ</span><span>Bhakti<span>AI</span></span></div>
+    <nav>
+      <a href="#explore">Explore</a>
+      <a href="#ask">Ask AI</a>
+      <a href="#daily">Daily Bhakti</a>
+    </nav>
+    <button class="nav-btn" onclick="scrollToSection('ask')">Ask a Question</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-copy">
+        <div class="eyebrow">AI × INDIAN DEVOTIONAL KNOWLEDGE</div>
+        <h1>Discover devotion.<br><em>Understand deeply.</em></h1>
+        <p>BhaktiAI makes devotional stories, traditions, prayers and Indian spiritual knowledge easier to explore through a friendly AI companion.</p>
+        <div class="hero-actions">
+          <button class="primary" onclick="scrollToSection('ask')">Ask BhaktiAI <span>→</span></button>
+          <button class="secondary" onclick="scrollToSection('explore')">Explore Knowledge</button>
+        </div>
+        <div class="trust-row"><span>✦ Curated knowledge</span><span>✦ Simple explanations</span><span>✦ Built for everyone</span></div>
+      </div>
+      <div class="mandala-card">
+        <div class="mandala">ॐ</div>
+        <div class="card-caption"><strong>Today's thought</strong><br><span id="thought">“When the mind becomes calm, wisdom becomes clear.”</span></div>
+      </div>
+    </section>
+
+    <section id="explore" class="section">
+      <div class="section-heading">
+        <div><span class="eyebrow">EXPLORE</span><h2>Knowledge for every seeker</h2></div>
+        <p>Start with a topic or ask a question in your own words.</p>
+      </div>
+      <div class="topic-grid">
+        <button class="topic" onclick="askTopic('Tell me a simple story about Lord Krishna.')"><span>🪷</span><b>Devotional Stories</b><small>Stories with meaning</small></button>
+        <button class="topic" onclick="askTopic('Explain the meaning of Diwali.')"><span>🪔</span><b>Festivals</b><small>Traditions & significance</small></button>
+        <button class="topic" onclick="askTopic('What is the meaning of the Bhagavad Gita?')"><span>📜</span><b>Scriptures</b><small>Simple explanations</small></button>
+        <button class="topic" onclick="askTopic('Tell me about temple traditions in India.')"><span>🛕</span><b>Temples & Traditions</b><small>Culture & practices</small></button>
+      </div>
+    </section>
+
+    <section id="ask" class="ask-section">
+      <div class="ask-intro">
+        <span class="eyebrow">YOUR AI COMPANION</span>
+        <h2>Ask anything.<br><em>Learn meaningfully.</em></h2>
+        <p>Ask questions about devotional stories, festivals, scriptures, prayers and traditions. BhaktiAI is designed to explain complex ideas in simple language.</p>
+        <div class="mini-feature"><span>✦</span><div><b>Source-aware design</b><br><small>The project is designed around curated devotional knowledge rather than unsupported answers.</small></div></div>
+      </div>
+      <div class="chat" id="chat">
+        <div class="chat-head"><span class="online-dot"></span><div><b>BhaktiAI</b><small>Devotional knowledge companion</small></div></div>
+        <div class="messages" id="messages">
+          <div class="msg bot">Namaste 🙏 I’m BhaktiAI. Ask me about a devotional story, festival, scripture, prayer or tradition.</div>
+        </div>
+        <div class="suggestions">
+          <button onclick="askTopic('Why is the Bhagavad Gita important?')">Why is the Gita important?</button>
+          <button onclick="askTopic('Tell me a short Krishna story.')">A Krishna story</button>
+          <button onclick="askTopic('Why do people visit temples?')">Why visit temples?</button>
+        </div>
+        <div class="composer">
+          <input id="question" placeholder="Ask a devotional question..." onkeydown="if(event.key==='Enter') sendQuestion()">
+          <button onclick="sendQuestion()">↑</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="daily" class="daily">
+      <div class="daily-inner">
+        <span class="eyebrow">DAILY BHAKTI</span>
+        <h2>A small moment of reflection.</h2>
+        <p id="dailyText">Take a few quiet minutes today to read, reflect and reconnect with what matters.</p>
+        <button class="primary" onclick="newThought()">Show today's thought</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark">ॐ</span><span>Bhakti<span>AI</span></span></div>
+    <p>Built for the Goa Devotional Hackathon · AI for culture, knowledge & connection</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
